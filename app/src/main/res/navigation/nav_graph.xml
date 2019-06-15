@@ -6,11 +6,11 @@
 
     <fragment android:id="@+id/weather_fragment"
               android:name="fun.gladkikh.app.myapplication.ui.fragment.WeatherFragment"
-              android:label="weather_fragment"/>
+              android:label="Weather"/>
     <fragment android:id="@+id/about_fragment"
               android:name="fun.gladkikh.app.myapplication.ui.fragment.AboutFragment"
-              android:label="AboutFragment"/>
+              android:label="About"/>
     <fragment android:id="@+id/feed_back_fragment"
               android:name="fun.gladkikh.app.myapplication.ui.fragment.FeedBackFragment"
-              android:label="FeedBackFragment"/>
+              android:label="Feedback"/>
 </navigation>

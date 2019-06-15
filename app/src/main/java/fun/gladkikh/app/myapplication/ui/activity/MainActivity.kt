@@ -4,6 +4,7 @@ import `fun`.gladkikh.app.myapplication.R
 import `fun`.gladkikh.app.myapplication.viewmodel.MainActivityViewModel
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -16,7 +17,14 @@ import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
+
+
+
+
+
+
 class MainActivity : AppCompatActivity() {
+
 
     lateinit var viewModel: MainActivityViewModel
     lateinit var navController: NavController
@@ -44,9 +52,14 @@ class MainActivity : AppCompatActivity() {
             .get(MainActivityViewModel::class.java)
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+
+        //Так легко добавили управление главным меню
         NavigationUI.setupWithNavController(nav_view, navController)
+        //Это управление в ActionBar
+        //NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout)
 
     }
+
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
