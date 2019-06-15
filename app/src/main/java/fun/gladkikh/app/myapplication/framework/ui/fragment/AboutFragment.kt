@@ -1,4 +1,4 @@
-package `fun`.gladkikh.app.myapplication.ui.fragment
+package `fun`.gladkikh.app.myapplication.framework.ui.fragment
 
 
 import `fun`.gladkikh.app.myapplication.R

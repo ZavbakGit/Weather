@@ -5,12 +5,12 @@
             app:startDestination="@id/weather_fragment">
 
     <fragment android:id="@+id/weather_fragment"
-              android:name="fun.gladkikh.app.myapplication.ui.fragment.WeatherFragment"
+              android:name="fun.gladkikh.app.myapplication.framework.ui.fragment.WeatherFragment"
               android:label="Weather"/>
     <fragment android:id="@+id/about_fragment"
-              android:name="fun.gladkikh.app.myapplication.ui.fragment.AboutFragment"
+              android:name="fun.gladkikh.app.myapplication.framework.ui.fragment.AboutFragment"
               android:label="About"/>
     <fragment android:id="@+id/feed_back_fragment"
-              android:name="fun.gladkikh.app.myapplication.ui.fragment.FeedBackFragment"
+              android:name="fun.gladkikh.app.myapplication.framework.ui.fragment.FeedBackFragment"
               android:label="Feedback"/>
 </navigation>

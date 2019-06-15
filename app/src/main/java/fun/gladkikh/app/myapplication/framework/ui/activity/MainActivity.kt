@@ -1,10 +1,9 @@
-package `fun`.gladkikh.app.myapplication.ui.activity
+package `fun`.gladkikh.app.myapplication.framework.ui.activity
 
 import `fun`.gladkikh.app.myapplication.R
 import `fun`.gladkikh.app.myapplication.viewmodel.MainActivityViewModel
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -19,15 +18,11 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 
 
-
-
-
-
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var viewModel: MainActivityViewModel
-    lateinit var navController: NavController
+    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +74,11 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected(item)
         }
+    }
+
+    fun showMessage(message:String){
+        Snackbar.make(fab, message, Snackbar.LENGTH_LONG)
+            .setAction("Action", null).show()
     }
 
 }
