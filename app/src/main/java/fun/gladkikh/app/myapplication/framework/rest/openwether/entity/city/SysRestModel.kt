@@ -1,4 +1,4 @@
-package `fun`.gladkikh.app.myapplication.framework.rest.openwether.entity
+package `fun`.gladkikh.app.myapplication.framework.rest.openwether.entity.city
 
 import com.google.gson.annotations.SerializedName
 

@@ -8,17 +8,21 @@ import android.arch.persistence.room.Room
 
 class App : Application() {
     companion object {
-        var database: AppDatabase? = null
-        var model:Model? = null
+        lateinit var database: AppDatabase
+        lateinit var model: Model
+        lateinit var appContext: Application
     }
 
     override fun onCreate() {
         super.onCreate()
+        appContext = this
+
         database = Room.databaseBuilder(this, AppDatabase::class.java, "mydatabase")
             .allowMainThreadQueries()
             .build()
-
         model = Model()
+
+
 
     }
 }

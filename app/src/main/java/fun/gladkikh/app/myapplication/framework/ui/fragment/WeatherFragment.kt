@@ -22,12 +22,12 @@ class WeatherFragment : BaseFragment() {
 
 
         btAddCity.setOnClickListener {
-            viewModel.currentCity = actvCity.text.toString()
+            viewModel.changeCity(actvCity.text.toString())
             actvCity.text.clear()
         }
 
         actvCity.setOnItemClickListener { _, _, _, _ ->
-            viewModel.currentCity = actvCity.text.toString()
+            viewModel.changeCity(actvCity.text.toString())
             actvCity.text.clear()
         }
 
@@ -49,7 +49,7 @@ class WeatherFragment : BaseFragment() {
             loadImage(icon)
         })
 
-        viewModel.listNameCityLd!!.observe(viewLifecycleOwner, Observer { list ->
+        viewModel.listNameCityLd.observe(viewLifecycleOwner, Observer { list ->
             if (list != null) {
                 setAdapterAutoComplete(list.map {
                     it.name
@@ -67,7 +67,7 @@ class WeatherFragment : BaseFragment() {
 
     }
 
-    fun setAdapterAutoComplete(list: List<String>) {
+    private fun setAdapterAutoComplete(list: List<String>) {
         activity?.let {
             val adapter = ArrayAdapter<String>(
                 activity as Context,
@@ -79,7 +79,7 @@ class WeatherFragment : BaseFragment() {
 
     }
 
-    fun loadImage(path: String?) {
+    private fun loadImage(path: String?) {
         try {
             if (path.isNullOrBlank()) {
                 ivIcon.setImageDrawable(null)
