@@ -21,22 +21,26 @@ class OpenWeatherRequestHandler {
                 icon = "${baseUrl}img/w/${it.weather?.get(0)?.icon}.png",
                 date = Date()
             )
-        }
+        }!!
 
-    fun getCityInfoWeatherByGeo(latitude: String,longitude: String) =
+    fun getCityInfoWeatherByGeo(latitude: String, longitude: String) =
         api.loadWeatherByGeo(
             keyApi = keyApi,
             units = units,
             latitude = latitude,
             longitude = longitude
-        ).map {
-            CityInfoWeather(
-                city = it.name ?: "",
-                temperature = it.main?.temp?.toFloat(),
-                icon = "${baseUrl}img/w/${it.weather?.get(0)?.icon}.png",
-                date = Date()
-            )
-        }
+        )
+
+            .map {
+                CityInfoWeather(
+                    city = it.name ?: "",
+                    temperature = it.main?.temp?.toFloat(),
+                    icon = "${baseUrl}img/w/${it.weather?.get(0)?.icon}.png",
+                    date = Date()
+                )
+            }!!
+
+
     init {
         api = createAdapter()
     }

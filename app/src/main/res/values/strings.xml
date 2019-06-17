@@ -2,11 +2,16 @@
     <string name="app_name">Weather</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">GeekBrains</string>
+    <string name="nav_header_subtitle">ag@799000.ru</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="message">Сообщение</string>
     <string name="send">Отправить</string>
     <string name="icon">Иконка</string>
+    <string name="add_city">Добавить город</string>
+    <string name="current_place">Текущее положение</string>
+    <string name="about">О программе</string>
+    <string name="mess_about">Эта программа написана для учебного курса GeekBrains</string>
+    <string name="city">Город</string>
 </resources>

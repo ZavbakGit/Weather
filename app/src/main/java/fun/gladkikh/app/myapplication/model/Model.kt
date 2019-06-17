@@ -5,14 +5,10 @@ import `fun`.gladkikh.app.myapplication.repository.Repository
 class Model{
     private val repository = Repository()
     fun getWeatherCity(city:String) = repository.getSingleCityInfoWeather(city)
-    fun getWeatherCityByGeo(latitude: String,longitude: String) =
-        repository.getSingleCityInfoWeatherByGeo(latitude,longitude)
-
     fun getLiveDataListNameCity() = repository.getLiveDataListNameCity()
     fun saveCity(name:String) = repository.saveCity(name)
 
     fun getCurrentCity() = repository.getCurrentCity()
     fun saveCurrentCity(city:String) = repository.saveCurrentCity(city)
-
 
 }

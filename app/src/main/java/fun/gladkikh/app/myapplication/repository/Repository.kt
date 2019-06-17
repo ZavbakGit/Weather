@@ -26,6 +26,7 @@ class Repository {
             }
     }
 
+    /*
     fun getSingleCityInfoWeatherByGeo(latitude: String,longitude: String): Single<CityInfoWeather> {
         return openWeatherRequestHandler.
             getCityInfoWeatherByGeo(latitude,longitude)
@@ -37,13 +38,13 @@ class Repository {
                     icon = it.icon
                 )
             }
-    }
+    }*/
 
     fun saveCity(name: String) {
         Thread {
-            var faund = App.database!!.appDao().getByCity(name)
+            val faund = App.database.appDao().getByCity(name)
             if (faund == null) {
-                App.database!!.appDao().insert(
+                App.database.appDao().insert(
                     City(
                         id = null,
                         name = name
@@ -53,7 +54,7 @@ class Repository {
         }.start()
     }
 
-    fun getLiveDataListNameCity() = App.database!!.appDao().getAll()
+    fun getLiveDataListNameCity() = App.database.appDao().getAll()
 
     fun getCurrentCity() = preferencesHolder.getCurrentCity()
     fun saveCurrentCity(city:String) = preferencesHolder.saveCity(city)

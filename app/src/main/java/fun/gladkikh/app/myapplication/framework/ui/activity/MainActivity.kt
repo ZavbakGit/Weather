@@ -17,22 +17,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 
-
 class MainActivity : AppCompatActivity() {
-
-
     private lateinit var viewModel: MainActivityViewModel
-    private lateinit var navController: NavController
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar,
@@ -53,8 +46,9 @@ class MainActivity : AppCompatActivity() {
         //Это управление в ActionBar
         //NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout)
 
-    }
 
+
+    }
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -77,7 +71,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showMessage(message:String){
-        Snackbar.make(fab, message, Snackbar.LENGTH_LONG)
+        Snackbar.make(root, message, Snackbar.LENGTH_LONG)
             .setAction("Action", null).show()
     }
 
