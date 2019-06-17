@@ -37,7 +37,7 @@ class WeatherFragment : BaseFragment() {
 
                 if (!addresses.isEmpty()) {
                     viewModel.changeCity(addresses[0].locality)
-                }else{
+                } else {
                     (activity as MainActivity).showMessage("Не смогли получить текущее положение!")
                 }
             }
@@ -126,17 +126,17 @@ class WeatherFragment : BaseFragment() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     activity!!.requestPermissions(permissions, 79955)
                 }
+            } else {
+                val criteria = Criteria()
+                criteria.accuracy = Criteria.ACCURACY_LOW
+                val provider = locationManager.getBestProvider(criteria, true)
+
+                locationManager.requestLocationUpdates(
+                    provider,
+                    1000 * 10, 100f,
+                    locationListener
+                )
             }
-
-            val criteria = Criteria()
-            criteria.accuracy = Criteria.ACCURACY_LOW
-            val provider = locationManager.getBestProvider(criteria, true)
-
-            locationManager.requestLocationUpdates(
-                provider,
-                1000 * 10, 100f,
-                locationListener
-            )
 
         })
     }
